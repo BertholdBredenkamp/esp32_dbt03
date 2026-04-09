@@ -1,4 +1,4 @@
-# HinweisESP32-C3 SuperMini DBT03 Modul
+# Hinweis - ESP32-C3 SuperMini DBT03 Modul
 
 Ich habe die Programmquellen für die Arduino V2 IDE angepasst. Bei meinem Terminal musste die Abfrage für die Einstellungen auf die Taste 5 gelegt werden. Das erste Zeichen war immer die 1 die dann sofort beim Start die Einstellungen startete.
 
