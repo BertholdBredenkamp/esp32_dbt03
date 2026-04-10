@@ -7,7 +7,7 @@
    CONDITIONS OF ANY KIND, either express or implied.
 */
 
-// Board : ESP32 C3
+// Board : ESP32C3 Dev Module
 // 
 
 #include <Arduino.h>
@@ -45,17 +45,19 @@ void setup()
 {
 	printf("Hello world!\n");
 
-	Serial.begin(115200);
+	// Serial.begin(115200);
   delay(2000);
-  Serial.print("Waiting for 5... ");
+  // Serial.print("Waiting for 5... ");
 
 
 	//Initialize NVS
 	esp_err_t ret = nvs_flash_init();
+	// ESP_ERROR_CHECK(nvs_flash_erase());
 	if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
 		ESP_ERROR_CHECK(nvs_flash_erase());
 		ret = nvs_flash_init();
 	}
+
 	ESP_ERROR_CHECK(ret);
   printf("Bre Start Init 1\n");
 	settings_init();

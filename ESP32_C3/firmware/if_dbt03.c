@@ -6,12 +6,15 @@
 
 #include "driver/ledc.h"
 #include "esp_timer.h"
+#include "nvs_flash.h"
+#include "nvs.h"
 
 // PINOUTS
 #define GPIO_OUTPUT_ED    GPIO_NUM_10
 #define GPIO_OUTPUT_LED    GPIO_NUM_8
 #define GPIO_INPUT_SD    GPIO_NUM_21
 #define GPIO_INPUT_S GPIO_NUM_20
+#define GPIO_INPUT_NVS GPIO_NUM_9
 #define GPIO_OUTPUT_PIN_SEL  ((1ULL<<GPIO_OUTPUT_IO_0) | (1ULL<<GPIO_OUTPUT_IO_1))
 
 
@@ -224,6 +227,13 @@ void if_dbt03_init()
 	gpio_config(&io_conf);
 	while ((gpio_get_level(GPIO_INPUT_S))!=0){
 		vTaskDelay(100/portTICK_PERIOD_MS);
+		// Wenn Taste GPIO gedrückt dann NVS Flash löschen
+		if (gpio_get_level(GPIO_INPUT_NVS) == 0) {
+			ESP_ERROR_CHECK(nvs_flash_erase());
+		  nvs_flash_init();
+			printf("NVS gelöscht\n");
+			esp_restart();
+		}
 	}
   // printf("if_dbt03_init INPUT_S LOW.\n");
 	vTaskDelay(1000/portTICK_PERIOD_MS);

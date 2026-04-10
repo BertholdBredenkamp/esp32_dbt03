@@ -47,9 +47,10 @@ int app_btx(io_type_t *io)
   hints.ai_family = AF_INET; // IPv4
   hints.ai_socktype = SOCK_STREAM;
 
-
+  
 	if (getaddrinfo(get_setting("SRVIP"), get_setting("SVRPORT"), &hints, &res) != 0) {
     printf("Fehler bei DNS-Auflösung\n");
+		return -1;
   }
 	// IP-Adresse extrahieren und ausgeben
   struct in_addr *addr = &((struct sockaddr_in *)res->ai_addr)->sin_addr;
@@ -232,7 +233,7 @@ void terminal_task(void *pvParameters)
 			app_write_string(io, "Status: ");
 			app_write_string(io, wlan_status_string);
 			app_write_string(io, " \x18");
-      printf("WLAN Status 2 %s\n", wlan_status_string);
+      // printf("WLAN Status 2 %s\n", wlan_status_string);
 			// vTaskDelay(xDelay);
 			if (wlan_status==1) {
  				char s[4];
