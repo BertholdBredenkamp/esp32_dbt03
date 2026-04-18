@@ -2,7 +2,7 @@
   "name": "WebTool-ESP32-DBT03",
   "builds": [
     {
-      "chipFamily": "ESP32",
+      "chipFamily": "ESP32-C3",
       "improv": false,
       "parts": [
         { "path": "esp32-c3_dbt03.ini.bootloader.bin", "offset": 0 },

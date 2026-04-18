@@ -1,3 +1,5 @@
+// 18.04.26 - Parameter Hostname hinzu
+//
 #include "settings.h"
 
 #include <string.h>
@@ -74,6 +76,7 @@ void init_settings()
 	add_setting("PWD",	"WLAN-Passwort",	33,	ST_TEXT,	0,	0);
 	add_setting("SRVIP",	"ServerIP",		33,	ST_TEXT,		0,	0);
 	add_setting("SVRPORT",	"ServerPort",		6,	ST_INT,		1,	65534);
+	add_setting("HOSTNAME",	"Hostname",		33,	ST_TEXT,	0,	0);
 }
 
 void print_svalue(const io_type_t *io, const setting_t *s)

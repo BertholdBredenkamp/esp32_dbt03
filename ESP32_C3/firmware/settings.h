@@ -2,7 +2,7 @@
 
 #include "applications.h"
 
-#define S_MAX_KEY_LEN (16)
+#define S_MAX_KEY_LEN (18)
 
 typedef enum {ST_SEP, ST_TEXT, ST_INT, ST_IP} setting_type;
 
