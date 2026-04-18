@@ -3,7 +3,6 @@
   "builds": [
     {
       "chipFamily": "ESP32-C3",
-      "improv": false,
       "parts": [
         { "path": "esp32-c3_dbt03.ini.bootloader.bin", "offset": 0 },
         { "path": "esp32-c3_dbt03.ino.partitions.bin", "offset": 32768 },
