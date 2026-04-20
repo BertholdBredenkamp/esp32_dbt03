@@ -12,7 +12,10 @@ Die Verbindung zum BTX Terminal ist ein 7 poliges DIN Kabel. Bitte am Terminal s
 
 Die Einstellungen können nicht das Zeichen "#" enthalten, sie werden mit der Taste 5 innerhalb von 10 Sekunden nach dem Start der BTX Verbindung am  Terminal aufgerufen. Mit der Boot Taste lassen sich die Einstellungen komplett löschen (NVS löschen) wenn keine Terminalverbindung besteht.
 
+## ESP WEB Tool
 
+Mit dem ESP Webtool kann der ESP32_C3 SuperMini einfach programmiert werden. Leider geht es nur mit dem Chrome oder Edge Browser. 
+Der Aufruf von : https://bertholdbredenkamp.github.io/esp32_dbt03//ESP32_C3/flash.html startet das Tool nach klick auf Connect wird der Serielle Port an dem das Modul angeschlossen ist abgefragt und dann startet die Übertragung.
 
 ## Hinweise
 
